@@ -1,67 +1,115 @@
 * {
-margin: 0;
-padding: 0;
-font-family: Arial, sans-serif;
-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
 }
-
 
 body {
-background: #f8f8f8;
-color: #222;
+    background: #f8f8f8;
+    color: #222;
 }
 
-
+/* HEADER */
 header {
-background: white;
-box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-padding: 15px 40px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 15px 40px;
 }
-
 
 nav {
-display: flex;
-justify-content: space-between;
-align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-
 
 nav ul {
-list-style: none;
-display: flex;
-gap: 20px;
+    list-style: none;
+    display: flex;
+    gap: 20px;
 }
-
 
 nav a {
-text-decoration: none;
-font-weight: bold;
-color: #444;
+    text-decoration: none;
+    font-weight: bold;
+    color: #444;
 }
 
-
+/* HERO SECTION */
 .hero {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 80px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 40px;
 }
-
 
 .hero-text h1 {
-font-size: 40px;
+    font-size: 40px;
 }
-
 
 .hero-text span {
-color: #005eff;
+    color: #005eff;
 }
 
-
 .btn {
-display: inline-block;
-background: #005eff;
-color: white;
-padding: 10px 18px;
-margin-top: 20px;
+    display: inline-block;
+    background: #005eff;
+    color: white;
+    padding: 10px 18px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* SECTIONS */
+.skills-section,
+.projects-section,
+.experience-section,
+.contact-section {
+    padding: 60px 40px;
+}
+
+.section-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.8s;
+}
+
+/* SKILLS */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.skill-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* PROJECTS */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.project-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #eee;
+    margin-top: 40px;
 }
