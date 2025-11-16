@@ -10,7 +10,7 @@ const site = {
   email: "sumanthjuluri.424@gmail.com",
   phone: "+91 76740 80424",
   linkedin: "https://www.linkedin.com/in/sumanth-juluri-34b3582b9",
-  address: "10-66, Shivaji Road, Narsampet, Warangal – 506133"
+  address: "10-66, Shivaji Road, Narsampet, Warangal – 506132"
 };
 
 const skills = [
@@ -230,4 +230,5 @@ document.addEventListener("DOMContentLoaded", init);
 
 After editing script.js, commit & push to GitHub — changes appear immediately.
 */
+
 
