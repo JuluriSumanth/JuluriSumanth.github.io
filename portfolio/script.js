@@ -29,14 +29,14 @@ const skills = [
 const projects = [
   {
     title: "Tally - Salesforce Integration",
-    subtitle: "Salesforce ↔ Tally (REST)",
+    subtitle: "Tally to Salesforce (REST)",
     desc: "Designed and implemented near real-time sync for Orders, Invoices, Payments, Debit Notes, and JV/TDS between Salesforce and Tally using Apex REST callouts and JSON.",
     tech: ["Apex", "REST API", "Tally", "Salesforce"]
   },
   {
     title: "Restaurant Billing App",
-    subtitle: "Order to invoice workflow",
-    desc: "Built an end-to-end billing and inventory app using LWC, Flows and Apex. Includes barcode scanning and Firebase integration for realtime updates.",
+    subtitle: "Order to Billing workflow",
+    desc: "Built a check‑in to billing workflow with Lightning Components and Flows, covering table allocation, order handling, and billing, secured access with profiles and page layouts.",
     tech: ["LWC", "Flow", "Firebase", "Apex"]
   },
   {
@@ -229,6 +229,7 @@ document.addEventListener("DOMContentLoaded", init);
 
 After editing script.js, commit & push to GitHub — changes appear immediately.
 */
+
 
 
 
