@@ -40,10 +40,9 @@ const projects = [
     tech: ["LWC", "Flow", "Firebase", "Apex"]
   },
   {
-    title: "Lead Conversion Automation",
-    subtitle: "Custom Lead__c → Account/Contact/Opportunity",
-    desc: "Automated conversion process creating multiple Opportunities from multi-picklist fields and navigates users to created records.",
-    tech: ["Flows", "Apex", "Custom Objects"]
+    title: "Real Estate Sales Tracker ",
+    desc: "Implemented a custom object model for property listings and the opportunity lifecycle with Flow automation for stage gates and notifications.",
+    tech: ["Flows", "Apex", "Custom Objects, Reports and Dashboards"]
   }
 ];
 
@@ -230,6 +229,7 @@ document.addEventListener("DOMContentLoaded", init);
 
 After editing script.js, commit & push to GitHub — changes appear immediately.
 */
+
 
 
 
