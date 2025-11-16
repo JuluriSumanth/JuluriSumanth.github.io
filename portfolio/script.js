@@ -16,7 +16,7 @@ const site = {
 const skills = [
   "Apex & REST API",
   "Lightning Web Components (LWC)",
-  "Flow Builder (Screen & Record)",
+  "Salesforce Automations",
   "Security & Access (Profiles/Permission Sets)",
   "Integrations (OAuth, Named Credentials)",
   "Reports & Dashboards",
@@ -230,5 +230,6 @@ document.addEventListener("DOMContentLoaded", init);
 
 After editing script.js, commit & push to GitHub — changes appear immediately.
 */
+
 
 
