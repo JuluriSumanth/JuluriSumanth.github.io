@@ -7,8 +7,12 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- QR Code Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
+
   <!-- HEADER -->
   <header>
     <nav class="container">
@@ -45,7 +49,7 @@
     <!-- SKILLS -->
     <section id="skills" class="section">
       <h2 class="section-title">Skills</h2>
-      <div id="skills-grid" class="grid"></div>
+      <div id="skills-grid" class="skills-grid"></div>
     </section>
 
     <!-- PROJECTS -->
@@ -72,19 +76,40 @@
       <ul id="cert-list" class="simple-list"></ul>
     </section>
 
+
     <!-- CONTACT -->
-    <section id="contact" class="section contact-section">
+    <section id="contact" class="section">
       <h2 class="section-title">Contact</h2>
-      <div id="contact-box" class="contact-box"></div>
+
+      <div class="contact-wrapper">
+
+        <!-- Visiting Card -->
+        <div class="visiting-card">
+          <div class="vc-top">
+            <div class="vc-left">
+              <h3>Sumanth Juluri</h3>
+              <p class="role">Salesforce Administrator</p>
+            </div>
+            <img src="assets/profile.jpg" class="vc-photo" alt="profile">
+          </div>
+
+          <div class="vc-right">
+            <p><strong>Email:</strong> <a href="mailto:sumanthjuluri.424@gmail.com">sumanthjuluri.424@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+917674080424">+91 76740 80424</a></p>
+            <p><strong>LinkedIn:</strong> <a target="_blank" href="https://www.linkedin.com/in/sumanth-juluri-34b3582b9">View Profile</a></p>
+          </div>
+        </div>
+
+
+      </div>
     </section>
+
   </main>
 
   <footer class="footer">
     <p id="footer-text">© <span id="footer-year"></span> <span id="footer-name"></span></p>
   </footer>
 
-  <!-- JS -->
   <script src="script.js"></script>
 </body>
 </html>
-
