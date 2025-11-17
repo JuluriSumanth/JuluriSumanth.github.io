@@ -129,6 +129,9 @@ nav.container{
   font-size:20px;
   margin:0 0 16px;
   color:#111;
+  opacity:0;
+  transform:translateY(20px);
+  transition:all .6s ease;
 }
 
 /* ---------------- GRID SYSTEM ---------------- */
@@ -149,29 +152,35 @@ nav.container{
   box-shadow:0 6px 16px rgba(15,15,15,.04);
 }
 
-/* ---------------- SKILLS (4 per row) ---------------- */
-
+/* ---------------- SKILLS GRID ---------------- */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);   /* 4 items per row */
+  grid-template-columns: repeat(4, 1fr);
   gap: 14px;
 }
 
-/* Modern pill skill cards */
+/* Equal height skill cards */
 .skill-card {
+  min-height: 55px; /* Fix height (same for all) */
+  display: flex; /* Center text */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
   padding: 10px 14px;
   background: var(--card);
   border: 1px solid rgba(0,0,0,0.08);
-  border-radius: 50px;
+  border-radius: 14px;     /* Rounded card look instead of pill */
+
   font-size: 14px;
   font-weight: 600;
-  text-align: center;
   color: #333;
+
   box-shadow: 0 3px 8px rgba(0,0,0,.05);
   transition: all .25s ease;
-  cursor: default;
 }
 
+/* Hover effect */
 .skill-card:hover {
   background: var(--accent);
   color: #fff;
@@ -179,19 +188,20 @@ nav.container{
   box-shadow: 0 6px 16px rgba(0,0,0,.12);
 }
 
-/* Tablet: 3 per row */
+/* Tablet 3 per row */
 @media (max-width: 900px) {
   .skills-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* Mobile: 2 per row */
+/* Mobile 2 per row */
 @media (max-width: 520px) {
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 
 /* ---------------- PROJECTS ---------------- */
 .project-card h3{
@@ -227,24 +237,80 @@ nav.container{
   color:var(--muted);
 }
 
-/* ---------------- CONTACT ---------------- */
-.contact-box{
-  display:flex;
-  gap:28px;
-  flex-wrap:wrap;
+/* ---------------- CONTACT SECTION ---------------- */
+
+.contact-wrapper {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-.contact-card{
-  background:var(--card);
-  padding:14px;
-  border-radius:10px;
-  min-width:240px;
-  box-shadow:0 6px 18px rgba(0,0,0,.04);
+/* Visiting Card */
+.visiting-card {
+  width: 380px;
+  padding: 20px;
+  background: var(--card);
+  border-radius: 12px;
+  border-left: 6px solid var(--accent);
+  box-shadow: 0 8px 22px rgba(0,0,0,.08);
+  transition: 0.3s ease;
 }
 
-.contact-card a{
-  color:var(--accent);
-  text-decoration:none;
+.visiting-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 26px rgba(0,0,0,.12);
+}
+
+.vc-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vc-photo {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #eee;
+}
+
+.vc-left h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.vc-left .role {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.vc-right p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+.vc-right a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+
+
+
+
+/* Mobile */
+@media(max-width: 600px) {
+  .contact-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
 }
 
 /* ---------------- FOOTER ---------------- */
@@ -254,41 +320,4 @@ nav.container{
   color:var(--muted);
   border-top:1px solid rgba(0,0,0,.04);
   margin-top:20px;
-}
-
-/* ---------------- RESPONSIVE ---------------- */
-@media (max-width:900px){
-  .hero{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  #hero-summary{
-    max-width:100%;
-  }
-
-  .grid.projects-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .hero-right img{
-    width:140px;
-    height:140px;
-  }
-}
-
-@media (max-width:520px){
-  .grid.projects-grid{
-    grid-template-columns:1fr;
-  }
-
-  nav.container{
-    flex-direction:column;
-    gap:10px;
-    align-items:flex-start;
-  }
-
-  .brand p{
-    display:none;
-  }
 }
