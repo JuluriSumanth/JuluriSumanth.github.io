@@ -1,72 +1,89 @@
 /* -------------------------
-   DATA - edit here to update
-   ------------------------- */
+   SITE DATA
+-------------------------- */
 
 const site = {
   name: "Sumanth Juluri",
   role: "Salesforce Administrator",
   summary:
-    "Salesforce professional with 4+ years of expertise in Sales Cloud, Service Cloud, and Custom Development. Skilled in Flows, LWC, Apex, and third-party integrations, I design scalable, user-centric solutions that boost efficiency, harness AI capabilities, and align Salesforce innovation with strategic business growth and operational excellence.",
+            "Salesforce professional with 4+ years of expertise in Sales Cloud, Service Cloud, and Custom Development. Skilled in Flows, LWC, Apex, and third-party integrations, I design scalable, user-centric solutions that boost efficiency, harness AI capabilities, and align Salesforce innovation with strategic business growth and operational excellence.",
   email: "sumanthjuluri.424@gmail.com",
   phone: "+91 76740 80424",
   linkedin: "https://www.linkedin.com/in/sumanth-juluri-34b3582b9",
-  address: "10-66, Shivaji Road, Narsampet, Warangal – 506132"
 };
+
+
+/* -------------------------
+   SKILLS
+-------------------------- */
 
 const skills = [
   "Apex & REST API",
   "Lightning Web Components (LWC)",
   "Salesforce Automations",
-  "Security & Access (Profiles/Permission Sets)",
-  "Integrations (OAuth, Named Credentials)",
+  "Sharing settings & Access Model",
+  "Integrations (OAuth / Named Credentials)",
   "Reports & Dashboards",
-  "CPQ (Products & Price Rules)",
-  "Data Loader & Governance",
+  "CPQ Rules",
+  "Data Loader & Migration",
   "HTML, CSS, JavaScript",
   "VS Code & Git"
 ];
 
+/* -------------------------
+   PROJECTS
+-------------------------- */
+
 const projects = [
   {
     title: "Tally - Salesforce Integration",
-    subtitle: "Tally to Salesforce (REST)",
-    desc: "Designed and implemented near real-time sync for Orders, Invoices, Payments, Debit Notes, and JV/TDS between Salesforce and Tally using Apex REST callouts and JSON.",
-    tech: ["Apex", "REST API", "Tally", "Salesforce"]
+    subtitle: "REST-Based Real-Time Sync",
+    desc: "Designed and implemented real-time sync for Orders, Invoices, Payments, Debit Notes, and TDS/JV.",
+    tech: ["Apex", "REST API", "JSON", "Tally"]
   },
   {
     title: "Restaurant Billing App",
-    subtitle: "Order to Billing workflow",
-    desc: "Built a check‑in to billing workflow with Lightning Components and Flows, covering table allocation, order handling, and billing, secured access with profiles and page layouts.",
-    tech: ["LWC", "Flow", "Firebase", "Apex"]
+    subtitle: "Order to Billing Workflow",
+    desc: "Created a custom billing automation using LWC + Flows with role-based access.",
+    tech: ["LWC", "Flow", "Apex"]
   },
   {
-    title: "Real Estate Sales Tracker ",
-    desc: "Implemented a custom object model for property listings and the opportunity lifecycle with Flow automation for stage gates and notifications.",
-    tech: ["Flows", "Apex", "Custom Objects, Reports and Dashboards"]
+    title: "Real Estate Sales Tracker",
+    subtitle: "Property Lifecycle Automation",
+    desc: "Custom object model & flows for complete property → lead → opportunity pipeline.",
+    tech: ["Flow", "Apex", "Reports"]
   }
 ];
+
+/* -------------------------
+   EXPERIENCE
+-------------------------- */
 
 const experience = [
   {
     role: "Salesforce Administrator",
-    company: "Schrander Solutions — Hyderabad, India",
+    company: "Schrander Solutions — Hyderabad",
     period: "Oct 2023 – Present",
     bullets: [
-      "Built Flow-first automation replacing legacy Process Builder.",
-      "Integrated Salesforce with Tally to automate invoice creation and reconciliation.",
-      "Designed secure access with OWDs, sharing rules, profiles and permission sets."
+      "Built Flow-first automation replacing old Process Builders.",
+      "Integrated Salesforce with Tally using REST callouts.",
+      "Implemented secure access model using OWD, Profiles, and Permission Sets."
     ]
   },
   {
     role: "Process Executive",
-    company: "Randstad Technologies — Hyderabad, India",
+    company: "Randstad Technologies — Hyderabad",
     period: "Oct 2021 – Jul 2023",
     bullets: [
-      "Managed customer process workflows and CRM tooling.",
-      "Provided backend support for data collection and reporting."
+      "Handled CRM workflows and backend process automation.",
+      "Supported reporting and customer data management."
     ]
   }
 ];
+
+/* -------------------------
+   EDUCATION
+-------------------------- */
 
 const education = [
   {
@@ -74,45 +91,72 @@ const education = [
     school: "Jayamukhi Institute of Technological Sciences",
     year: 2019
   },
-  { degree: "Intermediate", school: "Pragna Junior College", year: 2015 },
-  { degree: "SSC", school: "Wisdom High School", year: 2013 }
+  {
+    degree: "Intermediate",
+    school: "Pragna Junior College",
+    year: 2015
+  },
+  {
+    degree: "SSC",
+    school: "Wisdom High School",
+    year: 2013
+  }
 ];
+
+/* -------------------------
+   CERTIFICATIONS
+-------------------------- */
 
 const certifications = [
   "Salesforce Certified Administrator",
   "Salesforce AI Associate"
 ];
 
-/* -------------------------
-   RENDERING - do not change
-   ------------------------- */
 
+/* -------------------------
+   Rendering Helper
+-------------------------- */
 function el(q) { return document.querySelector(q) }
 
+
+/* -------------------------
+   RENDER HERO
+-------------------------- */
 function fillHero(){
   el("#site-name").textContent = site.name;
   el("#site-role").textContent = site.role;
+
   el("#hero-name").textContent = site.name;
   el("#hero-summary").textContent = site.summary;
+
   el("#hero-email").href = `mailto:${site.email}`;
-  el("#hero-email").textContent = "Email";
   el("#hero-linkedin").href = site.linkedin;
+
   el("#profile-img").src = "assets/profile.jpg";
+
   el("#footer-year").textContent = new Date().getFullYear();
   el("#footer-name").textContent = site.name;
 }
 
+
+/* -------------------------
+   RENDER SKILLS
+-------------------------- */
 function renderSkills(){
   const grid = el("#skills-grid");
   grid.innerHTML = "";
   skills.forEach(s => {
     const d = document.createElement("div");
-    d.className = "skill-card card";
+    d.className = "skill-card";
     d.textContent = s;
     grid.appendChild(d);
   });
 }
 
+
+/* -------------------------
+   RENDER PROJECTS
+-------------------------- */
 function renderProjects(){
   const grid = el("#projects-grid");
   grid.innerHTML = "";
@@ -121,30 +165,39 @@ function renderProjects(){
     card.className = "project-card card";
     card.innerHTML = `
       <h3>${p.title}</h3>
-      <p style="color:var(--muted);margin:6px 0">${p.subtitle || ""}</p>
+      <p style="color:var(--muted);margin:6px 0">${p.subtitle}</p>
       <p>${p.desc}</p>
-      <div style="margin-top:8px;font-size:13px;color:var(--muted)">Tech: ${p.tech ? p.tech.join(", ") : ""}</div>
+      <div style="margin-top:8px;font-size:13px;color:var(--muted)">
+        Tech: ${p.tech.join(", ")}
+      </div>
     `;
     grid.appendChild(card);
   });
 }
 
+
+/* -------------------------
+   RENDER EXPERIENCE
+-------------------------- */
 function renderExperience(){
   const list = el("#experience-list");
   list.innerHTML = "";
   experience.forEach(exp => {
     const it = document.createElement("div");
-    it.className = "item";
+    it.className = "item card";
     it.innerHTML = `
       <h4>${exp.role}</h4>
-      <div class="meta">${exp.company} · <em>${exp.period}</em></div>
+      <div class="meta">${exp.company} — <em>${exp.period}</em></div>
       <ul>${exp.bullets.map(b => `<li>${b}</li>`).join("")}</ul>
     `;
-    it.classList.add("card");
     list.appendChild(it);
   });
 }
 
+
+/* -------------------------
+   RENDER EDUCATION
+-------------------------- */
 function renderEducation(){
   const list = el("#education-list");
   list.innerHTML = "";
@@ -153,50 +206,37 @@ function renderEducation(){
     it.className = "item card";
     it.innerHTML = `
       <h4>${ed.degree}</h4>
-      <div class="meta">${ed.school} · ${ed.year}</div>
+      <div class="meta">${ed.school} • ${ed.year}</div>
     `;
     list.appendChild(it);
   });
 }
 
+
+/* -------------------------
+   RENDER CERTIFICATIONS
+-------------------------- */
 function renderCerts(){
   const ul = el("#cert-list");
   ul.innerHTML = certifications.map(c => `<li>${c}</li>`).join("");
 }
 
-function renderContact(){
-  const box = el("#contact-box");
-  box.innerHTML = `
-    <div class="contact-card card">
-      <strong>Email</strong>
-      <div><a href="mailto:${site.email}">${site.email}</a></div>
-    </div>
-    <div class="contact-card card">
-      <strong>Phone</strong>
-      <div><a href="tel:${site.phone.replace(/\s+/g,"")}">${site.phone}</a></div>
-    </div>
-    <div class="contact-card card">
-      <strong>LinkedIn</strong>
-      <div><a href="${site.linkedin}" target="_blank">Profile</a></div>
-    </div>
-    <div class="contact-card card">
-      <strong>Address</strong>
-      <div>${site.address}</div>
-    </div>
-  `;
-}
 
-/* Init render */
-function init(){
+
+
+
+/* -------------------------
+   INIT
+-------------------------- */
+document.addEventListener("DOMContentLoaded", () => {
   fillHero();
   renderSkills();
   renderProjects();
   renderExperience();
   renderEducation();
   renderCerts();
-  renderContact();
 
-  // simple fade-in for section titles
+  // Fade-in animation for section titles
   window.addEventListener("scroll", () => {
     document.querySelectorAll(".section-title").forEach((el) => {
       const top = el.getBoundingClientRect().top;
@@ -206,34 +246,4 @@ function init(){
       }
     });
   });
-}
-
-document.addEventListener("DOMContentLoaded", init);
-
-/* -------------------------
-   HOW TO ADD NEW ITEMS
-   -------------------------
- - Add a new skill:
-     skills.push("New Skill");
-
- - Add a new project:
-     projects.push({
-       title: "New Project",
-       subtitle: "Short subtitle",
-       desc: "Description...",
-       tech: ["Apex","LWC"]
-     });
-
- - Add new experience:
-     experience.push({ role:"...", company:"...", period:"...", bullets:["..."] });
-
-After editing script.js, commit & push to GitHub — changes appear immediately.
-*/
-
-
-
-
-
-
-
-
+});
