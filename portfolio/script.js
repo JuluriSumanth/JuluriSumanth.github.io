@@ -4,9 +4,9 @@
 
 const site = {
   name: "Sumanth Juluri",
-  role: "Salesforce Administrator & Integration Developer",
+  role: "Salesforce Administrator",
   summary:
-    "Certified Salesforce Administrator with 4+ years experience in Sales Cloud & Service Cloud. Specializes in Flow-first automation, LWC, Apex REST integrations (Tally), CPQ and reporting.",
+    "Salesforce professional with 4+ years of expertise in Sales Cloud, Service Cloud, and Custom Development. Skilled in Flows, LWC, Apex, and third-party integrations, I design scalable, user-centric solutions that boost efficiency, harness AI capabilities, and align Salesforce innovation with strategic business growth and operational excellence.",
   email: "sumanthjuluri.424@gmail.com",
   phone: "+91 76740 80424",
   linkedin: "https://www.linkedin.com/in/sumanth-juluri-34b3582b9",
@@ -229,6 +229,7 @@ document.addEventListener("DOMContentLoaded", init);
 
 After editing script.js, commit & push to GitHub — changes appear immediately.
 */
+
 
 
 
